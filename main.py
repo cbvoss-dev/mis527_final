@@ -16,9 +16,16 @@ def main():
 
     print(df)
 
+    most_popular_name(df)
+
 
 def most_popular_name(df):
-    pass
+    # Dataframe showing which names have appeared on the list the most times
+    name_appearances_df = df.groupby(['name', 'sex'])['count'].count().to_frame()
+    name_appearances_df = name_appearances_df.reset_index()
+    name_appearances_df = name_appearances_df.sort_values(by=['count', 'name'], ascending=False)
+    print(name_appearances_df.head(160))
+
     # Male name listed the most times
 
     # Female name listed the most times
