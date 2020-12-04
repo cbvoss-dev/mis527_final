@@ -47,7 +47,7 @@ def sustained_names_by_cent(df):
   labels = top10_19th_df["name"]
   plt.figure()
   top10_19th_df.plot(kind = "bar")
-  plt.title("Most Popular Names in the 19th Century")
+  plt.title("Top 10 sustained name popularity in the 19th Century")
   plt.xticks(x, labels, rotation = 90) 
   plt.xlabel("Name")
   plt.ylabel("Count of years over 100")
@@ -57,7 +57,7 @@ def sustained_names_by_cent(df):
   labels = top10_20th_df["name"]
   plt.figure()
   top10_20th_df.plot(kind = "bar")
-  plt.title("Most Popular Names in the 20th Century")
+  plt.title("Top 10 sustained name popularity in the 20th Century")
   plt.xticks(x, labels, rotation = 90) 
   plt.xlabel("Name")
   plt.ylabel("Count of years over 100")
@@ -68,7 +68,7 @@ def sustained_names_by_cent(df):
   labels = top10_21st_df["name"]
   plt.figure()
   top10_21st_df.plot(kind = "bar")
-  plt.title("Most Popular Names in the 21st Century")
+  plt.title("Top 10 sustained name popularity in the 21st Century")
   plt.xticks(x, labels, rotation = 90) 
   plt.xlabel("Name")
   plt.ylabel("Count of years over 100")
