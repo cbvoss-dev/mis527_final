@@ -17,6 +17,8 @@ def main():
     print(df)
 
     most_popular_name(df)
+    
+    sustained_names_by_cent(df)
 
 
 def most_popular_name(df):
@@ -33,6 +35,47 @@ def most_popular_name(df):
     # Male name with highest count
 
     # Female name with highest count
+    
+def sustained_names_by_cent(df):
+  cent_df = df.groupby("Century")["name"].value_counts().to_frame(name = "count")
+  cent_df = cent_df.reset_index()
+  
+  
+  top10_19th_df = cent_df[:10]
+  x = [0,1,2,3,4,5,6,7,8,9]
+  labels = top10_19th_df["name"]
+  plt.figure()
+  top10_19th_df.plot(kind = "bar")
+  plt.title("Most Popular Names in the 19th Century")
+  plt.xticks(x, labels, rotation = 90) 
+  plt.xlabel("Name")
+  plt.ylabel("Count of years over 100")
+  
+  top10_20th_df = cent_df[527:537]
+  x = [0,1,2,3,4,5,6,7,8,9]
+  labels = top10_20th_df["name"]
+  plt.figure()
+  top10_20th_df.plot(kind = "bar")
+  plt.title("Most Popular Names in the 20th Century")
+  plt.xticks(x, labels, rotation = 90) 
+  plt.xlabel("Name")
+  plt.ylabel("Count of years over 100")
+  
+  
+  top10_21st_df = cent_df[5633:5643]
+  x = [0,1,2,3,4,5,6,7,8,9]
+  labels = top10_21st_df["name"]
+  plt.figure()
+  top10_21st_df.plot(kind = "bar")
+  plt.title("Most Popular Names in the 21st Century")
+  plt.xticks(x, labels, rotation = 90) 
+  plt.xlabel("Name")
+  plt.ylabel("Count of years over 100")
 
+  print(top10_19th_df)
+  print(top10_20th_df)
+  print(top10_21st_df)
+
+  return
 
 main()
