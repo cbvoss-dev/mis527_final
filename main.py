@@ -38,6 +38,7 @@ def most_popular_name(df):
     
 def sustained_names_by_cent(df):
   cent_df = df.groupby("Century")["name"].value_counts().to_frame(name = "count")
+  cent_df["count"] = cent_df["count"].apply(division)
   cent_df = cent_df.reset_index()
   
   
@@ -78,4 +79,6 @@ def sustained_names_by_cent(df):
 
   return
 
+def division(score):
+  return score / 2
 main()
